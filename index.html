@@ -1,368 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Famlicious</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Famlicious</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Gilroy', Arial, sans-serif;
-      color: #000000;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    header img {
-      height: 32px;
-    }
-
-    header a {
-      color: #000000;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 18px;
-    }
-
-    .hero-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 40px;
-      flex-wrap: wrap;
-    }
-
-    .hero-text {
-      flex: 1;
-      max-width: 45%;
-    }
-
-    .hero-text img {
-      height: 64px;
-      margin-bottom: 20px;
-    }
-
-    .hero-text h1 {
-      font-weight: 500;
-      font-size: 55px;
-      line-height: 57px;
-      margin-bottom: 20px;
-    }
-
-    .hero-text p {
-      font-weight: 500;
-      font-size: 19px;
-      line-height: 29px;
-      opacity: 0.8;
-      margin-bottom: 20px;
-    }
-
-    .hero-text .app-links {
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-text .app-links img {
-      height: 50px;
-      margin-right: 10px;
-    }
-
-    .hero-image {
-      flex: 1;
-      max-width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-image img {
-      max-width: 90%;
-      height: auto;
-    }
-
-    footer {
-      background-color: #f8f9fa;
-      padding: 40px 20px;
-      position: relative;
-    }
-
-    footer .footer-content {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    footer .footer-section {
-      flex: 1;
-      min-width: 200px;
-      margin-bottom: 20px;
-    }
-
-    footer .footer-section img.logo {
-      height: 32px;
-      margin-bottom: 20px;
-    }
-
-    footer .footer-section img.screenshot {
-      width: 100%;
-      height: auto;
-      margin: 10px 0;
-      height: calc(100% - 60px);
-    }
-
-    footer .social-icons {
-      margin-top: 20px;
-    }
-
-    footer .social-icons img {
-      height: 24px;
-      margin-right: 10px;
-    }
-
-    footer .footer-section p {
-      font-size: 16px;
-      line-height: 25px;
-      opacity: 0.8;
-    }
-
-    footer .footer-links {
-      padding-left: 20px;
-    }
-
-    footer .footer-links p,
-    footer .footer-links a {
-      font-size: 14px;
-      line-height: 16.8px;
-      color: #000000;
-      margin: 5px 0;
-      text-decoration: none;
-    }
-
-    footer .footer-links .section-title {
-      font-weight: 700;
-      font-size: 18px;
-      line-height: 22.28px;
-      margin-bottom: 10px;
-    }
-
-    footer .footer-section.contact-info p {
-      margin-bottom: 5px;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      font-size: 16px;
-      line-height: 16px;
-      color: #666666;
-      margin-top: 20px;
-    }
-
-    .footer-bottom-line {
-      width: 100%;
-      height: 1px;
-      background-color: #e0e0e0;
-      margin: 20px 0;
-      position: absolute;
-      bottom: 40px;
-      left: 0;
-    }
-
-    @media (max-width: 1024px) {
-      .hero-section {
-        flex-direction: column;
-        padding: 40px 20px;
-      }
-
-      .hero-text,
-      .hero-image {
-        max-width: 100%;
-        padding: 0;
-        text-align: center;
-      }
-
-      .hero-image {
-        margin-bottom: 20px;
-      }
-
-      .hero-text h1 {
-        font-size: 48px;
-        line-height: 50px;
-      }
-
-      .hero-text p {
-        font-size: 18px;
-        line-height: 28px;
-      }
-
-      .hero-text .app-links img {
-        height: 40px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-      }
-
-      header a {
-        margin-top: 10px;
-        text-align: center;
-      }
-
-      .hero-section {
-        flex-direction: column;
-        padding: 20px;
-      }
-
-      .hero-text,
-      .hero-image {
-        max-width: 100%;
-        padding: 0;
-        text-align: center;
-      }
-
-      .hero-image {
-        margin-bottom: 20px;
-      }
-
-      .hero-text h1 {
-        font-size: 36px;
-        line-height: 38px;
-      }
-
-      .hero-text p {
-        font-size: 16px;
-        line-height: 26px;
-      }
-
-      .hero-text .app-links img {
-        height: 30px;
-      }
-
-      footer .footer-content {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      footer .footer-section {
-        max-width: 100%;
-        text-align: center;
-      }
-
-      footer .footer-section img.screenshot {
-        max-width: 80%;
-        height: auto;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header a {
-        font-size: 16px;
-        text-align: center;
-      }
-
-      .hero-text h1 {
-        font-size: 28px;
-        line-height: 30px;
-      }
-
-      .hero-text p {
-        font-size: 14px;
-        line-height: 22px;
-      }
-
-      .hero-text .app-links img {
-        height: 20px;
-      }
-
-      .hero-image img {
-        max-width: 100%;
-      }
-
-      .footer-section img.screenshot {
-        max-width: 100%;
-        height: auto;
-      }
-
-      footer .footer-links {
-        padding-left: 0;
-      }
-
-      footer .footer-links p,
-      footer .footer-links a {
-        margin: 8px 0;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <img src="images/main-logo.png" alt="Famlicious Logo">
-    <a href="mailto:info@famlicious.com">info@famlicious.com</a>
-  </header>
-  <main>
-    <section class="hero-section">
-      <div class="hero-image">
-        <img src="images/hero-screen.png" alt="App Preview">
+  <body>
+    <header>
+      <img src="images/main-logo.png" alt="Famlicious Logo" />
+      <div>
+        <img src="images/mail.svg" alt="Mail Logo" />
+        <a href="mailto:info@famlicious.com">info@famlicious.com</a>
       </div>
-      <div class="hero-text">
-        <img src="images/small-logo.png" alt="Famlicious Logo">
-        <h1>The app for sharing your family life</h1>
-        <p>A new app for sharing the moments of your family life. Be us. Be more. Be together.</p>
-        <div class="app-links">
-          <a href="#"><img src="https://via.placeholder.com/150x50" alt="App Store"></a>
-          <a href="#"><img src="https://via.placeholder.com/150x50" alt="Google Play"></a>
+    </header>
+    <main>
+      <section class="hero-section">
+        <div class="hero-image">
+          <img src="images/hero-screen.png" alt="App Preview" />
         </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <img class="logo" src="images/main-logo.png" alt="Famlicious Logo">
-        <p>Our goal is to create a platform that enhances real life and makes it easier to share.</p>
-        
-        <div class="social-icons">
-            <a href="#"><img src="images/fb.png" alt="Facebook"></a>
-            <a href="#"><img src="images/tw.png" alt="Twitter"></a>
-            <a href="#"><img src="images/tg.png" alt="Telegram"></a>
+        <div class="hero-text">
+          <img src="images/small-logo.png" alt="Famlicious Logo" />
+          <h1>The app for sharing your family life</h1>
+          <p>A new app for sharing the moments of your family life.</p>
+          <p>Be You. Be More. Be Together.</p>
+          <p>
+            Birthdays, Vacations. Weddings, Anniversary, Graduation, 1st day of
+            school, making cookies, Christmas, 4th of July, Halloween, funny
+            faces...
+          </p>
+          <div class="app-links">
+            <a href="#"><img src="images/app_store.png" alt="App Store" /></a>
           </div>
-        <div class="contact-info">
-          <p>123-456-789</p>
-          <p><a href="mailto:info@famlicious.com">info@famlicious.com</a></p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <img class="logo" src="images/main-logo.png" alt="Famlicious Logo" />
+          <p>
+            Our goal is to create a trusted platform for families to share their
+            lives with each other.
+          </p>
+
+          <div class="social-icons">
+            <a href="#"><img src="images/fb.png" alt="Facebook" /></a>
+            <a href="#"><img src="images/tw.png" alt="Twitter" /></a>
+            <a href="#"><img src="images/tg.png" alt="Telegram" /></a>
+          </div>
+          <div class="contact-info">
+            <p>123-456-789</p>
+            <p><a href="mailto:info@famlicious.com">info@famlicious.com</a></p>
+          </div>
+        </div>
+        <div class="footer-section footer-links">
+          <p class="section-title">Quick</p>
+          <p><a href="#">About Us</a></p>
+          <p><a href="#">Privacy Policy</a></p>
+          <p><a href="#">Contact Us</a></p>
+        </div>
+        <div class="footer-section footer-links">
+          <p class="section-title">Links</p>
+          <p><a href="#">Play Store</a></p>
+          <p><a href="#">App Store</a></p>
+        </div>
+        <div class="footer-section">
+          <img
+            class="screenshot"
+            src="images/footer-screen.png"
+            alt="Mobile Screenshot"
+          />
         </div>
       </div>
-      <div class="footer-section footer-links">
-        <p class="section-title">Quick</p>
-        <p><a href="#">About Us</a></p>
-        <p><a href="#">Privacy Policy</a></p>
-        <p><a href="#">Contact Us</a></p>
-      </div>
-      <div class="footer-section footer-links">
-        <p class="section-title">Links</p>
-        <p><a href="#">Play Store</a></p>
-        <p><a href="#">App Store</a></p>
-      </div>
-      <div class="footer-section">
-        <img class="screenshot" src="images/footer-screen.png" alt="Mobile Screenshot">
-      </div>
-    </div>
-    <div class="footer-bottom-line"></div>
-    <div class="footer-bottom">
-      ©2023 Famlicious.com All Rights Reserved
-    </div>
-  </footer>
-</body>
-
+      <div class="footer-bottom-line"></div>
+      <div class="footer-bottom">©2023 Famlicious.com All Rights Reserved</div>
+    </footer>
+  </body>
 </html>
